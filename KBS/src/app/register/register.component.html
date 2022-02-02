@@ -1,0 +1,54 @@
+<div id="card-regstrtion">
+    <div id="card-content">
+      <div id="card-title">
+        <h2>Regstrtion</h2>
+        <div class="underline-title"></div>
+  
+      </div>
+      <form  #f=ngForm  class="form" ngNativeValidate  (ngSubmit)="saveData(f.valid)">
+        <label for="user-first-name" style="padding-top:13px">
+          &nbsp;FirstName</label>
+        <input type="text" class="form-content" required   name="firstNamee"  [(ngModel)]="firstName" #class=ngModel />
+  
+        <div class="form-border">
+        </div>
+  
+        <div class="alert alert-danger" style="color: red;" *ngIf="class.touched && !class.valid" > FirstName must be Enter</div>
+  
+        <label for="user-last-name" style="padding-top:13px">&nbsp;LastName</label>
+        <input type="text" class="form-content" required  name="lastName"  [(ngModel)]="lastName" #class1=ngModel  />
+        <div class="form-border"></div>
+  
+        <div class="alert alert-danger" style="color: red;" *ngIf= class1.touched && !class1.valid >LastName must be Enter</div>
+       
+       <!-- Emile  -->
+        <label for="user-email" style="padding-top:13px">&nbsp;Email</label>
+        <input type="text" class="form-content" required  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email"  [(ngModel)]="email" #class=ngModel />
+        <div class="form-border"></div>
+  
+        
+        <div class="alert alert-danger" style="color: red;"  name="email" *ngIf="!class.valid && class.touched" >
+  
+          Email must be Like example@mail.com.
+  
+        </div>
+        
+        <label for="user-password" style="padding-top:22px">&nbsp;Password</label>
+        <input id="user-password" class="form-content" type="password"  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" name="password"  [(ngModel)]="password" #class2=ngModel />
+        <div class="form-border"></div>
+        <div class="form-border"></div>
+  
+        <div class="alert alert-danger" style="color: red;" name="password" *ngIf="!class2.valid && class2.touched">
+   Password requirements
+  At least 8 characters—the more characters, the better.
+  A mixture of both uppercase and lowercase letters.
+  A mixture of letters and numbers.
+  Inclusion of at least one special character, e.g., ! @ # ? ]
+        </div>
+  
+  
+        <input id="submit-btn" type="submit" name="submit" value="Regstrtion"/>
+      </form>
+    </div>
+  </div>
+  

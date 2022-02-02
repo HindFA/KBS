@@ -1,0 +1,31 @@
+
+ <button class="dots" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button (click)=" AllQustion()" mat-menu-item>
+    <!-- <i class="material-icons" style="color:black">quora</i> -->
+    <span>All Qustion</span>
+   
+  
+  </button>
+  <button mat-menu-item>
+    <span>Category </span>
+
+  </button>
+
+  <button (click)="Askquestion()"  mat-menu-item>
+    
+    <span>Ask Qustion </span>
+  </button>
+  <button (click)="profile()"  mat-menu-item>
+    <!-- <mat-icon>perm_identity</mat-icon> -->
+    <span>Profile</span>
+  </button>
+  <button (click)="onLogout()"  mat-menu-item>
+    <!-- <mat-icon>power_settings_new</mat-icon> -->
+    <span >Logout</span>
+  </button>
+</mat-menu> 
+
+

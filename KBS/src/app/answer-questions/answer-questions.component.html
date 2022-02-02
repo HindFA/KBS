@@ -1,0 +1,31 @@
+<div id="main-content" class="blog-page">
+  <h2 id="card-title">{{q.qustions_title}}</h2>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-lg-8 col-md-12 left-box">
+        <div class="card single_post">
+          <div class="body">
+
+            <p> {{q.qustions}}</p>
+            <p> ask by: {{q.user_qustion?.email}}</p>
+            <p>Date :{{q.date}}</p>
+
+          </div>
+        </div>
+        <div class="touch">
+          <form class="touch__form send" action="POST" #f=ngForm class="example-form" (ngSubmit)="Post()">
+
+            <div class="send__text">
+              <p class="send__label">
+                Answer <span>*</span>
+              </p>
+
+              <textarea tabindex="3" name="answer" [(ngModel)]="answer"></textarea>
+            </div>
+
+            <div class="send__button">
+              <button tabindex="4" type="submit" class="send__btn btn" class="example-form" isDisabled=true>Post
+                Answer</button>
+            </div>
+          </form>
+        </div>

@@ -1,0 +1,41 @@
+ <div id="card">
+    <div id="card-content">
+      <div id="card-title">
+        <h2>LOGIN</h2>
+        <div class="underline-title"></div>
+      </div>
+      <form #f=ngForm  class="form" ngNativeValidate   (ngSubmit)="submit(f.valid)">
+        <label for="user-email" style="padding-top:13px">
+          &nbsp;Email
+        </label>
+     
+        <input   type="text"  class="form-content" required   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  name="email"  [(ngModel)]="email" #class=ngModel />
+    <div class="form-border"></div>
+      
+       <div class="alert alert-danger" style="color: red;"   *ngIf="(!class.valid && class.touched)">
+      
+     Email Or Password NotFound.
+  
+   </div>
+    <label for="user-password" style="padding-top:22px">&nbsp;Password
+    </label>
+    <input class="form-content" type="password" required  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"  name="password"  [(ngModel)]="password" #class2=ngModel   />
+    <div class="form-border"></div>
+    <div class="form-border"></div>
+      
+       <div class="alert alert-danger" style="color: red;"  *ngIf="(!class2.valid && class2.touched)">
+      
+        Email Or Password NotFound.
+  
+   </div>
+    <a href="#">
+      <legend id="forgot-pass">Forgot password?</legend>
+    </a>
+    <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
+  
+    <a routerLink="Register" >Don't have account yet?</a>
+    </form>
+  </div>
+  
+  </div>
+  

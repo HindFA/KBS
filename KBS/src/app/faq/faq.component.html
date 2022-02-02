@@ -1,0 +1,51 @@
+<router-outlet></router-outlet>
+<section id="faq" class="section faq-area">
+  <div class="container">
+    <div class="title-block mx-auto">
+      <div class="section_title mb-4 text-center">
+
+        <h2 id="card-title">All Qustions </h2>
+        <div class="underline-title"></div>
+        <button class="button-7" role="button" (click)="Askquestion()">Ask Qustion</button>
+
+        <button class="button-8" role="button" (click)="UnansweredQuestions()">Unanswered Questions</button>
+        <br>
+      </div>
+    </div>
+
+    <div
+      class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0 border-color "
+      *ngFor="let i of q">
+      <!-- <div class="row align-items-center">
+        <div class="col-md-8 mb-3 mb-sm-0"> -->
+          <div>
+            <div>
+          <h6 section>
+            <a class="text-primary ">{{i.qustions}}</a>
+          </h6>
+
+          <p class="text-sm">
+            <span class="op-6"> Posted</span>
+            <a class="text-black"></a>
+            <span class="op-6">in :
+              {{i.date}}</span>
+            <a class="text- black"> by:{{i.user_qustion?.username}}</a>
+          </p>
+          <h5 style=" font-size:medium;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #eaedf2;"
+            section *ngFor='let o of i.answers'>
+            <span class="op-7"><br>{{o.answer}}</span>
+
+            <p class="text-sm"><span class="op-6"> Posted</span>
+              <span class="op-7">in : {{o.date}}</span>
+              <a class="text- black"> by:{{o. user_answer?.email}}</a>
+            </p>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

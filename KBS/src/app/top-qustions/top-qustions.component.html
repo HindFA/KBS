@@ -1,0 +1,91 @@
+<!-- <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-9 mb-3">
+      <button class="sticky-inner" role="button" (click)="Askquestion()">Ask Qustion</button>
+      <div class="col-lg-6 text-lg-left">
+        <div class="row text-lg-left mb-5">
+
+
+
+          <h2 >Top Questions</h2>
+
+        </div>
+      </div>
+      <div
+        class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0"
+        *ngFor="let i of q">
+        <div class="row align-items-center">
+          <div class="col-md-8 mb-3 mb-sm-0">
+            <h5 section>
+              <a class="text-primary" [routerLink]="['/Answer-Questions/'+ i.id + '']">{{i.qustions}}</a>
+            </h5>
+            <p class="text-sm"><span class="op-6"> Posted</span> <a class="text-black">in :{{i.date}}</a> <span
+                class="op-6"> by</span> <a class="text-black">{{i.user_qustion?.username}}</a></p>
+          </div>
+          <div class="col-md-4 op-7">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div> -->
+<router-outlet></router-outlet>
+<section id="faq" class="section faq-area">
+  <div class="container">
+    <div class="title-block mx-auto">
+      <div class="section_title mb-4 text-center" >
+
+        <h2 id="card-title">Top Qustions </h2>
+        <div class="underline-title"></div>
+        <button  class="sticky-inner" role="button" (click)="  Askquestion()" >Ask Qustion</button>
+        <br>
+      </div>
+    </div>
+
+    <div class="card row-hover pos-relative py-3 px-3 mb-3 border-warning border-top-0 border-right-0 border-bottom-0 rounded-0"
+    *ngFor="let i of q">
+      <div >
+        <div >
+          <h6 section >
+            <a class="text-primary"  [routerLink]="['/Answer-Questions/'+ i.id + '']">{{i.qustions}}</a>
+          </h6>
+
+          <p class="text-sm">
+            <span class="op-6"> Posted</span>
+             <a class="text-black"></a>
+             <span class="op-6">in :
+                in :{{i.date}}</span>
+              <a class="text- black"> by:{{i.user_qustion?.username}}</a>
+          </p>
+
+          <!-- <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-sm-0">
+            <h5 style=" font-size:medium;
+            color: black;
+            font-family: 'Times New Roman', Times, serif
+            ;"
+             section *ngFor='let o of i.answers'>
+              <span class="op-7"><br>{{o.answer}}</span>
+
+              <p class="text-sm"><span > Posted</span>
+                <span class="op-7">in : {{o.date}}</span>
+              </p>
+            </h5>
+
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</section>

@@ -1,0 +1,10 @@
+
+.dots {
+
+    float: right;
+    background: linear-gradient(100deg, #caf0f8, #ade8f4);
+    border-radius: 0%;
+  padding-left: 100px;
+
+}
+
